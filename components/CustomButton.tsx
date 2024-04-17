@@ -1,7 +1,6 @@
 'use client'; // to turn this component into a client-side component
 import { CustomButtonProps } from '@/types';
 import Image from 'next/image';
-import { text } from 'stream/consumers';
 
 const CustomButton = ({
   title,
@@ -10,10 +9,11 @@ const CustomButton = ({
   btnType,
   textStyles,
   rightIcon,
+  isDisabled,
 }: CustomButtonProps) => {
   return (
     <button
-      disabled={false}
+      disabled={isDisabled}
       type={btnType || 'button'}
       className={`custom-btn ${containerStyles}`}
       onClick={() => {
